@@ -28,7 +28,6 @@ Tamanho: 19 bytes
 | 17–18 | ec63 | — | HIPÓTESE | Flags / CRC |
 
 carregando 
-
 | 0 | 0f | 15 | CONFIRMADO | Battery % |
 | 1 | 51/63 | 81/99 | INFERIDO | Charge state |
 | 2 | 00/01 | 0/1 | INFERIDO | Charging flag |
