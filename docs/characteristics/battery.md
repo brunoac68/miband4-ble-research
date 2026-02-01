@@ -5,7 +5,7 @@ Service UUID: 0000fee0-0000-1000-8000-00805f9b34fb
 
 ## Payload observado (baseline)
 
-Fonte: logs/2026-01-31_baseline.log
+Fonte: `logs/2026-01-31_baseline.log`
 
 
 0f5100b207010100000000ea07011f0b292fec63
@@ -27,17 +27,27 @@ Tamanho: 19 bytes
 | 10–16 | ea07011f0b292f | — | INFERIDO | Timestamp |
 | 17–18 | ec63 | — | HIPÓTESE | Flags / CRC |
 
-carregando 
-| 0 | 0f | 15 | CONFIRMADO | Battery % |
-| 1 | 51/63 | 81/99 | INFERIDO | Charge state |
-| 2 | 00/01 | 0/1 | INFERIDO | Charging flag |
-| 3 | b2 | 178 | HIPÓTESE | Voltage / cycles |
+---
 
+## Payload observado (carregando)
+
+Fonte: `logs/2026-02-01_battery_charging.log`
+
+
+---
+
+## Diferenças observadas (baseline × carregando)
+
+| Offset | Baseline | Carregando | Estado |
+|--------|----------|------------|--------|
+| 1 | 0x51 (81) | 0x63 (99) | INFERIDO – Charge state |
+| 2 | 0x00 | 0x01 | INFERIDO – Charging flag |
+
+---
 
 ## Observações livres
 
-- Byte 0 confere com app Mi Fit
+- Byte 0 confere com o app Mi Fit
 - Timestamp parece bater com horário do log
-
-- Byte 1 e 2 mudam exclusivamente ao conectar carregador
+- Bytes 1 e 2 mudam exclusivamente ao conectar carregador
 - Byte 2 aparenta ser flag binária de carregamento
